@@ -234,6 +234,13 @@ int getInbalancePoints(BiTree T){
 	}
 }
 
+void hello(char *string){
+	for(int i=0;string[i]!='\0';i++){
+		//TODO
+		printf("%c",string[i]);
+	}
+}
+
 
 
 void BSNodeTest(){
