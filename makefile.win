@@ -5,9 +5,9 @@ CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
 RES      = Project3_private.res
-OBJ      = BiTree.o AdjList.o main.o CSNode.o BSNode.o MGragh.o BiQueue.o Sqlist.o ThQueue.o ThreadNode.o Queue.o Node.o Stack.o $(RES)
-LINKOBJ  = BiTree.o AdjList.o main.o CSNode.o BSNode.o MGragh.o BiQueue.o Sqlist.o ThQueue.o ThreadNode.o Queue.o Node.o Stack.o Project3_private.res
-CLEANOBJ  =  BiTree.o AdjList.o main.o CSNode.o BSNode.o MGragh.o BiQueue.o Sqlist.o ThQueue.o ThreadNode.o Queue.o Node.o Stack.o  Project3_private.res Project3.exe
+OBJ      = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o MGragh.o CSNode.o $(RES)
+LINKOBJ  = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o MGragh.o CSNode.o Project3_private.res
+CLEANOBJ  =  ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o MGragh.o CSNode.o  Project3_private.res Project3.exe
 LIBS     =  -fstack-protector-strong
 INCS     =  
 CXXINCS  =  
@@ -27,17 +27,35 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-BiTree.o: BiTree.cpp BiQueue.h Queue.h BiTree.h
-	$(CPP) -c BiTree.cpp -o BiTree.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+ThQueue.o: ThQueue.cpp ThQueue.h ThreadNode.h
+	$(CPP) -c ThQueue.cpp -o ThQueue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 AdjList.o: AdjList.cpp AdjList.h Queue.h MGragh.h
 	$(CPP) -c AdjList.cpp -o AdjList.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-main.o: main.cpp Stack.h BSNode.h main.h Sqlist.h Node.h AdjList.h Queue.h ThreadNode.h BiTree.h MGragh.h
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS) 
+Stack.o: Stack.cpp Stack.h
+	$(CPP) -c Stack.cpp -o Stack.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-CSNode.o: CSNode.cpp Queue.h CSNode.h BiTree.h
-	$(CPP) -c CSNode.cpp -o CSNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+ThreadNode.o: ThreadNode.cpp ThQueue.h ThreadNode.h
+	$(CPP) -c ThreadNode.cpp -o ThreadNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+BiQueue.o: BiQueue.cpp BiQueue.h Queue.h BiTree.h
+	$(CPP) -c BiQueue.cpp -o BiQueue.o $(CXXFLAGS) 
+
+BiTree.o: BiTree.cpp BiQueue.h Queue.h BiTree.h
+	$(CPP) -c BiTree.cpp -o BiTree.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Node.o: Node.cpp Node.h
+	$(CPP) -c Node.cpp -o Node.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Queue.o: Queue.cpp Queue.h
+	$(CPP) -c Queue.cpp -o Queue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+main.o: main.cpp Stack.h BSNode.h AdjList.h Queue.h ThreadNode.h Node.h main.h Sqlist.h MGragh.h BiTree.h
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Sqlist.o: Sqlist.cpp Sqlist.h
+	$(CPP) -c Sqlist.cpp -o Sqlist.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 BSNode.o: BSNode.cpp BSNode.h Queue.h BiTree.h
 	$(CPP) -c BSNode.cpp -o BSNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
@@ -45,26 +63,8 @@ BSNode.o: BSNode.cpp BSNode.h Queue.h BiTree.h
 MGragh.o: MGragh.cpp MGragh.h
 	$(CPP) -c MGragh.cpp -o MGragh.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-BiQueue.o: BiQueue.cpp BiQueue.h Queue.h BiTree.h
-	$(CPP) -c BiQueue.cpp -o BiQueue.o $(CXXFLAGS) 
-
-Sqlist.o: Sqlist.cpp Sqlist.h
-	$(CPP) -c Sqlist.cpp -o Sqlist.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-ThQueue.o: ThQueue.cpp ThreadNode.h ThQueue.h
-	$(CPP) -c ThQueue.cpp -o ThQueue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-ThreadNode.o: ThreadNode.cpp ThreadNode.h ThQueue.h
-	$(CPP) -c ThreadNode.cpp -o ThreadNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-Queue.o: Queue.cpp Queue.h
-	$(CPP) -c Queue.cpp -o Queue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-Node.o: Node.cpp Node.h
-	$(CPP) -c Node.cpp -o Node.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-Stack.o: Stack.cpp Stack.h
-	$(CPP) -c Stack.cpp -o Stack.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+CSNode.o: CSNode.cpp Queue.h CSNode.h BiTree.h
+	$(CPP) -c CSNode.cpp -o CSNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 Project3_private.res: Project3_private.rc 
 	$(WINDRES) -i Project3_private.rc --input-format=rc -o Project3_private.res -O coff $(WINDRESFLAGS) 
