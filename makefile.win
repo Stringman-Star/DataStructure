@@ -1,0 +1,71 @@
+# Project: DScode
+# Makefile created by Red Panda C++ 2.20
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = Project3_private.res
+OBJ      = BiTree.o AdjList.o main.o CSNode.o BSNode.o MGragh.o BiQueue.o Sqlist.o ThQueue.o ThreadNode.o Queue.o Node.o Stack.o $(RES)
+LINKOBJ  = BiTree.o AdjList.o main.o CSNode.o BSNode.o MGragh.o BiQueue.o Sqlist.o ThQueue.o ThreadNode.o Queue.o Node.o Stack.o Project3_private.res
+CLEANOBJ  =  BiTree.o AdjList.o main.o CSNode.o BSNode.o MGragh.o BiQueue.o Sqlist.o ThQueue.o ThreadNode.o Queue.o Node.o Stack.o  Project3_private.res Project3.exe
+LIBS     =  -fstack-protector-strong
+INCS     =  
+CXXINCS  =  
+BIN      = Project3.exe
+CXXFLAGS = $(CXXINCS)  -g3 -pipe -Wall -D__DEBUG__
+CFLAGS   = $(INCS)  -g3 -pipe -Wall -D__DEBUG__
+RM       = del /q /f
+WINDRESFLAGS  = 
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	-$(RM) $(CLEANOBJ) > NUL 2>&1
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+BiTree.o: BiTree.cpp BiQueue.h Queue.h BiTree.h
+	$(CPP) -c BiTree.cpp -o BiTree.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+AdjList.o: AdjList.cpp AdjList.h Queue.h MGragh.h
+	$(CPP) -c AdjList.cpp -o AdjList.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+main.o: main.cpp Stack.h BSNode.h main.h Sqlist.h Node.h AdjList.h Queue.h ThreadNode.h BiTree.h MGragh.h
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS) 
+
+CSNode.o: CSNode.cpp Queue.h CSNode.h BiTree.h
+	$(CPP) -c CSNode.cpp -o CSNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+BSNode.o: BSNode.cpp BSNode.h Queue.h BiTree.h
+	$(CPP) -c BSNode.cpp -o BSNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+MGragh.o: MGragh.cpp MGragh.h
+	$(CPP) -c MGragh.cpp -o MGragh.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+BiQueue.o: BiQueue.cpp BiQueue.h Queue.h BiTree.h
+	$(CPP) -c BiQueue.cpp -o BiQueue.o $(CXXFLAGS) 
+
+Sqlist.o: Sqlist.cpp Sqlist.h
+	$(CPP) -c Sqlist.cpp -o Sqlist.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+ThQueue.o: ThQueue.cpp ThreadNode.h ThQueue.h
+	$(CPP) -c ThQueue.cpp -o ThQueue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+ThreadNode.o: ThreadNode.cpp ThreadNode.h ThQueue.h
+	$(CPP) -c ThreadNode.cpp -o ThreadNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Queue.o: Queue.cpp Queue.h
+	$(CPP) -c Queue.cpp -o Queue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Node.o: Node.cpp Node.h
+	$(CPP) -c Node.cpp -o Node.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Stack.o: Stack.cpp Stack.h
+	$(CPP) -c Stack.cpp -o Stack.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+Project3_private.res: Project3_private.rc 
+	$(WINDRES) -i Project3_private.rc --input-format=rc -o Project3_private.res -O coff $(WINDRESFLAGS) 
+
