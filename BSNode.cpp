@@ -234,6 +234,10 @@ int getInbalancePoints(BiTree T){
 	}
 }
 
+typedef struct name{
+	char* string;
+}name;
+
 void BSNodeTest(){
 	//TODO
 	char datas[10]={'F','B','I','A','C','H','J','D','G','E'};
