@@ -234,6 +234,10 @@ int getInbalancePoints(BiTree T){
 	}
 }
 
+void Test(){
+	printf("hello world");
+}
+
 
 void BSNodeTest(){
 	//TODO
