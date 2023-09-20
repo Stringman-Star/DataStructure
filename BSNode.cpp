@@ -76,6 +76,8 @@ int searchBSnode(BSTree T,int data,BSNode *&node){
 	}
 }
 
+
+
 int delBSNode(BSTree &T,char x){
 	//q->node1,T->node1,p->T->node1
 	BSNode *q=T,**p=&T;
@@ -233,6 +235,11 @@ int getInbalancePoints(BiTree T){
 		return getInbalancePoints(T->lchild)+getInbalancePoints(T->rchild)+flag;
 	}
 }
+
+void wdjaksjdhka(){
+	
+}
+
 
 void BSNodeTest(){
 	//TODO
