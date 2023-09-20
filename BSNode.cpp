@@ -233,6 +233,7 @@ int getInbalancePoints(BiTree T){
 		return getInbalancePoints(T->lchild)+getInbalancePoints(T->rchild)+flag;
 	}
 }
+
 void BSNodeTest(){
 	//TODO
 	char datas[10]={'F','B','I','A','C','H','J','D','G','E'};
