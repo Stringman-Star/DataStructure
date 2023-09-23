@@ -52,7 +52,7 @@ Queue.o: Queue.cpp Queue.h
 	$(CPP) -c Queue.cpp -o Queue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 main.o: main.cpp Stack.h BSNode.h AdjList.h Queue.h ThreadNode.h Node.h main.h Sqlist.h MGragh.h BiTree.h
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS) 
 
 Sqlist.o: Sqlist.cpp Sqlist.h
 	$(CPP) -c Sqlist.cpp -o Sqlist.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk

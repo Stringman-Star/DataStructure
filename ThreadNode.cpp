@@ -107,10 +107,9 @@ void CreateInThread(ThreadTree T){//alter a tree to a threaded tree
 void CreatePreThread(ThreadTree T){
 	ThreadNode* pre=NULL;
 	PreThread(T,&pre);
-	if(pre==NULL){
+	if(pre!=NULL){
 		if(pre->rtag==0){
 			//TODO
-			pre=pre->rchild;
 			pre->rchild=NULL;
 			pre->rtag=1;
 		}
@@ -196,13 +195,34 @@ void preTranverse(ThreadTree T){
 	}
 }
 
+void ThreadATree(ThreadTree T,ThreadNode*& pre){
+	if(T!=NULL){
+		//TODO
+		ThreadATree(T->lchild,pre);
+		if(T->lchild==NULL){
+			//TODO
+			T->ltag=1;
+			T->lchild=pre;
+		}
+		if(pre!=NULL&&pre->rchild==NULL){
+			//TODO
+			pre->rtag=1;
+			pre->rchild=T;
+		}
+		pre=T;
+		if(T->rchild!=NULL){
+			//TODO
+			ThreadATree(T->rchild,pre);
+		}
+	}
+}
 
 void ThreadNodeTest(){
 	//TODO
-//	ThreadTree T=generate();//二叉树
-//	//	InOrder(T);
-//	CreateInThread(T);//线索二叉树
-//	//	inOrderTraverse(T);
-//	//	levelOrder(T);
+	ThreadTree T=generateATree();//二叉树
+	//	InOrder(T);
+	CreatePreThread(T);//线索二叉树
+	preTranverse(T);
+	//	levelOrder(T);
 }
 
