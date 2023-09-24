@@ -1,7 +1,7 @@
 [Project]
 filename = Project3.dev
 name = DScode
-UnitCount = 28
+UnitCount = 27
 Type = 1
 Ver = 3
 Includes = 
@@ -333,7 +333,7 @@ Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
-RealEncoding = UTF-8
+RealEncoding = ASCII
 
 
 [Unit22]
@@ -363,19 +363,6 @@ RealEncoding = UTF-8
 
 
 [Unit24]
-FileName = test.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = 
-
-
-[Unit25]
 FileName = MGragh.h
 CompileCpp = 0
 Folder = 头文件
@@ -388,7 +375,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit26]
+[Unit25]
 FileName = MGragh.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -401,12 +388,25 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit27]
+[Unit26]
 FileName = BiTree.h
 CompileCpp = 0
 Folder = 头文件
 Compile = 0
 Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit27]
+FileName = CSNode.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 

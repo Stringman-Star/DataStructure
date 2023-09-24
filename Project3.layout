@@ -83,12 +83,13 @@
     },
     {
         "caretX": 1,
-        "caretY": 208,
+        "caretY": 182,
         "filename": "C:/Users/35491/Documents/projects/DScode/ThreadNode.cpp",
-        "focused": false,
-        "isOpen": false,
+        "focused": true,
+        "isOpen": true,
         "leftChar": 1,
-        "topLine": 207
+        "order": 7,
+        "topLine": 182
     },
     {
         "caretX": 1,
@@ -175,10 +176,10 @@
         "topLine": 25
     },
     {
-        "caretX": 11,
-        "caretY": 4,
+        "caretX": 19,
+        "caretY": 8,
         "filename": "C:/Users/35491/Documents/projects/DScode/main.cpp",
-        "focused": true,
+        "focused": false,
         "isOpen": true,
         "leftChar": 1,
         "order": 6,
