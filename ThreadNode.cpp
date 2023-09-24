@@ -109,7 +109,7 @@ void CreatePreThread(ThreadTree T){
 	PreThread(T,&pre);
 	if(pre!=NULL){
 		if(pre->rtag==0){
-			//TODO
+			//TODO 
 			pre->rchild=NULL;
 			pre->rtag=1;
 		}

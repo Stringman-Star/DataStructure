@@ -5,9 +5,9 @@ CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
 RES      = Project3_private.res
-OBJ      = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o MGragh.o CSNode.o $(RES)
-LINKOBJ  = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o MGragh.o CSNode.o Project3_private.res
-CLEANOBJ  =  ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o MGragh.o CSNode.o  Project3_private.res Project3.exe
+OBJ      = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o CSTNode.o MGragh.o CSNode.o $(RES)
+LINKOBJ  = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o CSTNode.o MGragh.o CSNode.o Project3_private.res
+CLEANOBJ  =  ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o CSTNode.o MGragh.o CSNode.o  Project3_private.res Project3.exe
 LIBS     =  -fstack-protector-strong
 INCS     =  
 CXXINCS  =  
@@ -59,6 +59,9 @@ Sqlist.o: Sqlist.cpp Sqlist.h
 
 BSNode.o: BSNode.cpp BSNode.h Queue.h BiTree.h
 	$(CPP) -c BSNode.cpp -o BSNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+CSTNode.o: CSTNode.cpp
+	$(CPP) -c CSTNode.cpp -o CSTNode.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 MGragh.o: MGragh.cpp MGragh.h
 	$(CPP) -c MGragh.cpp -o MGragh.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk

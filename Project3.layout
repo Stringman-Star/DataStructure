@@ -85,11 +85,11 @@
         "caretX": 1,
         "caretY": 182,
         "filename": "C:/Users/35491/Documents/projects/DScode/ThreadNode.cpp",
-        "focused": true,
+        "focused": false,
         "isOpen": true,
         "leftChar": 1,
         "order": 7,
-        "topLine": 182
+        "topLine": 207
     },
     {
         "caretX": 1,
@@ -211,6 +211,16 @@
         "focused": false,
         "isOpen": false,
         "leftChar": 1,
+        "topLine": 1
+    },
+    {
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "C:/Users/35491/Documents/projects/DScode/CSTNode.cpp",
+        "focused": true,
+        "isOpen": true,
+        "leftChar": 1,
+        "order": 8,
         "topLine": 1
     },
     {
