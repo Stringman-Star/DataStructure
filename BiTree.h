@@ -36,6 +36,7 @@ void deleteBiTree(BiTree* T);
 void delXTree(BiTree* T,char X);
 BiTree getDad(BiTree T,char x);
 void visit(BiTNode* p);
+BiTree createByLelIn(char leArr[],char InArr[],int start,int end,int num);
 
 void BiTreeTest();
 #endif

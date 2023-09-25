@@ -40,7 +40,7 @@ void createUnThreadBiTree(ThreadTree T,char data,int* indexSeq,int n){
 	}
 	init(t);
 }
-ThreadTree generateATree(){
+ThreadTree generateAThTree(){
 	int index[9][10] = { {}, {0}, {0, 1}, {1}, {1, 0}, {1, 1}, {1, 1, 0}, {1, 1, 0, 1}, {1, 1, 1} };
 	int nums[9]={0,1,2,1,2,2,3,4,3};
 	char data[9]={'A','B','C','D','E','F','G','H','I'};
@@ -94,6 +94,37 @@ void PreThread(ThreadTree p,ThreadTree *pre){
 		}
 	}
 }
+
+
+/*
+  lchild在遍历的时候仅有根节点在其之前访问过才需要判断是否被遍历过
+  访问根节点是前驱+rtag，T加ltag
+  所以如果T在lchild之前被访问，那么要判断
+  
+  访问rchild是否要判断要看T是否成为过pre
+  因为仅有pre可能被更改rtag
+  所以PreOrder访问rchild的时候要看，因为T成为过lchild的pre
+  而InOrder中T是rchild的直接前驱，所以不需要判断
+ */
+void PostThread(ThreadTree T,ThreadNode* &pre){
+	if(T!=NULL){
+		//TODO
+		PostThread(T->lchild,pre);
+		PostThread(T->rchild,pre);
+		if(T->lchild==NULL&&T->ltag==0){
+			//TODO
+			T->lchild=pre;
+			T->ltag=1;
+		}
+		if(pre!=NULL&&pre->rchild==NULL&&pre->rtag==0){
+			//TODO
+			pre->rchild=T;
+			pre->rtag=1;
+		}
+		pre=T;
+	}
+}
+
 void CreateInThread(ThreadTree T){//alter a tree to a threaded tree
 	ThreadTree p=NULL;
 	ThreadTree* pre=&p;
@@ -114,6 +145,11 @@ void CreatePreThread(ThreadTree T){
 			pre->rtag=1;
 		}
 	}
+}
+
+void CreatePostThread(ThreadTree T){
+	ThreadNode* pre=NULL;
+	PostThread(T,pre);
 }
 ThreadNode* getFirstNode(ThreadTree T){
 	ThreadTree p=T;
@@ -195,6 +231,7 @@ void preTranverse(ThreadTree T){
 	}
 }
 
+
 void ThreadATree(ThreadTree T,ThreadNode*& pre){
 	if(T!=NULL){
 		//TODO
@@ -217,12 +254,16 @@ void ThreadATree(ThreadTree T,ThreadNode*& pre){
 	}
 }
 
+
+
 void ThreadNodeTest(){
 	//TODO
-	ThreadTree T=generateATree();//二叉树
+	ThreadTree T=generateAThTree();//二叉树
 	//	InOrder(T);
-	CreatePreThread(T);//线索二叉树
-	preTranverse(T);
+//	CreatePreThread(T);//线索二叉树
+//	preTranverse(T);
+	CreatePostThread(T);
+	
 	//	levelOrder(T);
 }
 

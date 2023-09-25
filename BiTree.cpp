@@ -521,18 +521,12 @@ int Calculate(BiTree T){
 	}
 }
 
-
 void BiTreeTest(){
 	//TODO
-	char PreArr[]="ABDECFG";
-	char InArr[]="DBEAFCG";
-	char LeArr[]="ABCDEFG";
-	
-	BiTree T=createByLelIn(LeArr,InArr,0,sizeof(InArr)/sizeof(*InArr)-2,sizeof(InArr)/sizeof(*InArr)-1);
-	BiTree T2=generate();
-//	printf("%d ",isCompletedTree(T2));
-//	for(BiTNode* p=leafLink(T)->rchild;p!=NULL;p=p->rchild){
-//		//TODO
-//		printf("%c",p->data);
-//	}
+	char PreArr[]="ABCDE";
+	char InArr[]="DCBEA";
+//	char LeArr[]="ABCDEFG";
+//	BiTree T=generate();
+	BiTree T=createByLelIn(PreArr,InArr,0,sizeof(PreArr)/sizeof(*PreArr)-2,sizeof(InArr)/sizeof(*InArr)-1);
+	PreOrder(T);
 }

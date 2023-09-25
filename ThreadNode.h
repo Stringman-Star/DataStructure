@@ -9,7 +9,7 @@ typedef struct ThreadNode:BiTNode{
 }ThreadNode,*ThreadTree;
 void init(ThreadNode* tnode);
 void createUnThreadBiTree(ThreadTree T,char data,int* indexSeq,int n);
-ThreadTree generateATree();//generate a sample of UnThreadTree
+ThreadTree generateAThTree();//generate a sample of UnThreadTree
 void PreThread(ThreadTree p,ThreadTree pre);//PreThreading
 void CreateInThread(ThreadTree T);
 void CreatePreThread(ThreadTree T);

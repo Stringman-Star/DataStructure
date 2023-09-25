@@ -4,23 +4,6 @@
 #include"BiTree.h"
 //tranvse a Tree
 
-
-CSTree alterTree2CS(BiTree T,BiTNode* pre){
-	return NULL;
-}
-CSTree alterTrees2CS(BiTree Ts[],int num){
-	if(num==0)return NULL;
-	CSTree CS;
-	CS=alterTree2CS(Ts[0],NULL);//指向第一棵树
-	CSTNode* curNode=CS;
-	int index=1;
-	while(index<num){
-		//TODO
-		curNode->nextSibling=alterTree2CS(Ts[index],NULL);
-		curNode=curNode->nextSibling;
-	}
-	return CS;
-}
 void preOrderTravse(CSTree T){
 	if(T!=NULL){
 		//TODO
@@ -31,6 +14,7 @@ void preOrderTravse(CSTree T){
 			preOrderTravse(pCurchild);
 			pCurchild=pCurchild->nextSibling;
 		}
+		preOrderTravse(T->nextSibling);
 	}
 }
 /*
@@ -63,6 +47,25 @@ void leafsInCSTree(CSTree T){
 			leafsInCSTree(p);
 		}
 	}
+}
+
+
+int getLeafs(CSTree T){
+	if(T==NULL)return -1;
+	if(T->firstChild==NULL){//如果没有孩子，则找到了叶子节点
+		//TODO
+		return 1;
+	}else{//否则做先根遍历
+		CSTNode* p=T->firstChild;
+		int sum=0;
+		while(p!=NULL){//循环遍历T的每个子树中的叶子节点数
+			//TODO
+			sum+=getLeafs(p);//把每一棵子树内的叶子节点数加起来
+			p=p->nextSibling;
+		}
+		return sum;//返回自己的叶子节点数给上一层
+	}
+	
 }
 
 /*
@@ -110,8 +113,30 @@ int getDepthOfCSTree(CSTree T){
 	}
 }
 
+int func(CSTree T){
+	//TODO
+	if(T==NULL){
+		//TODO
+		return 0;
+	}else{
+		int maxSubHeight=0;
+		int curSubHeight=0;
+		for(CSTNode* p=T->firstChild;p!=NULL;p=p->nextSibling){
+			//TODO
+			curSubHeight=func(p);
+			if(curSubHeight>maxSubHeight){
+				//TODO
+				maxSubHeight=curSubHeight;
+			}
+		}
+		return maxSubHeight+1;
+	}
+}
 void CSTNodeTest(){
 	//TODO
-	CSTree T;
-	T=generate();
+	char PreArr[]="ABCDE";
+	char InArr[]="DCBEA";
+	CSTree T=createByLelIn(PreArr,InArr,0,sizeof(PreArr)/sizeof(*PreArr)-2,sizeof(InArr)/sizeof(*InArr)-1);
+//	preOrderTravse(T);
+	preOrderTravse(T);
 }
