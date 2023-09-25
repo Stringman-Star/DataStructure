@@ -1,7 +1,7 @@
 [Project]
 filename = Project3.dev
 name = DScode
-UnitCount = 29
+UnitCount = 27
 Type = 1
 Ver = 3
 Includes = 
@@ -168,19 +168,6 @@ RealEncoding = UTF-8
 
 
 [Unit9]
-FileName = CSNode.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit10]
 FileName = ThreadNode.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -193,7 +180,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit11]
+[Unit10]
 FileName = BiQueue.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -206,7 +193,7 @@ FileEncoding = PROJECT
 RealEncoding = ASCII
 
 
-[Unit12]
+[Unit11]
 FileName = BiTree.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -219,7 +206,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit13]
+[Unit12]
 FileName = ThQueue.h
 CompileCpp = 0
 Folder = 头文件
@@ -232,7 +219,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit14]
+[Unit13]
 FileName = .gitignore
 CompileCpp = 0
 Folder = 其他文件
@@ -245,7 +232,7 @@ FileEncoding = PROJECT
 RealEncoding = ASCII
 
 
-[Unit15]
+[Unit14]
 FileName = ThreadNode.h
 CompileCpp = 0
 Folder = 头文件
@@ -258,7 +245,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit16]
+[Unit15]
 FileName = CSTNode.h
 CompileCpp = 0
 Folder = 头文件
@@ -268,10 +255,10 @@ Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
-RealEncoding = 
+RealEncoding = ASCII
 
 
-[Unit17]
+[Unit16]
 FileName = Node.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -284,7 +271,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit18]
+[Unit17]
 FileName = Node.h
 CompileCpp = 0
 Folder = 头文件
@@ -297,7 +284,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit19]
+[Unit18]
 FileName = main.h
 CompileCpp = 0
 Folder = 头文件
@@ -310,7 +297,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit20]
+[Unit19]
 FileName = Sqlist.h
 CompileCpp = 0
 Folder = 头文件
@@ -323,7 +310,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit21]
+[Unit20]
 FileName = Queue.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -336,7 +323,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit22]
+[Unit21]
 FileName = main.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -349,7 +336,7 @@ FileEncoding = PROJECT
 RealEncoding = ASCII
 
 
-[Unit23]
+[Unit22]
 FileName = Sqlist.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -362,7 +349,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit24]
+[Unit23]
 FileName = BSNode.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -375,7 +362,7 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit25]
+[Unit24]
 FileName = MGragh.h
 CompileCpp = 0
 Folder = 头文件
@@ -388,8 +375,21 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit26]
+[Unit25]
 FileName = CSTNode.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = 
+
+
+[Unit26]
+FileName = MGragh.cpp
 CompileCpp = 1
 Folder = 源文件
 Compile = 1
@@ -402,11 +402,11 @@ RealEncoding = UTF-8
 
 
 [Unit27]
-FileName = MGragh.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
+FileName = BiTree.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
@@ -428,11 +428,11 @@ RealEncoding = UTF-8
 
 
 [Unit29]
-FileName = CSNode.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
+FileName = BiTree.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 

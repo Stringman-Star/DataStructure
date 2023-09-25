@@ -9,6 +9,7 @@
 #include"BSNode.h"
 #include"AdjList.h"
 #include"MGragh.h"
+#include"CSTNode.h"
 #include <iostream>
 using namespace std;
 #endif

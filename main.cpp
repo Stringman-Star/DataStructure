@@ -1,5 +1,12 @@
 #include <iostream>
 #include"main.h"
+
+
+struct demo{
+	int a;
+	int &b=a;
+};
+
 int main(int argc, char** argv) {
 //	SqlistTest();
 //	NodeTest();
@@ -7,5 +14,6 @@ int main(int argc, char** argv) {
 //	BSNodeTest();
 //	ThreadNodeTest();
 //	Queue.Test();
+	CSTNodeTest();
 }
 
