@@ -72,13 +72,14 @@
         "topLine": 1
     },
     {
-        "caretX": 1,
-        "caretY": 182,
+        "caretX": 31,
+        "caretY": 208,
         "filename": "C:/Users/35491/Documents/projects/DScode/ThreadNode.cpp",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
-        "topLine": 207
+        "order": 6,
+        "topLine": 193
     },
     {
         "caretX": 1,
@@ -90,49 +91,52 @@
         "topLine": 1
     },
     {
-        "caretX": 11,
-        "caretY": 528,
+        "caretX": 1,
+        "caretY": 525,
         "filename": "C:/Users/35491/Documents/projects/DScode/BiTree.cpp",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
-        "topLine": 412
+        "order": 3,
+        "topLine": 525
     },
     {
         "caretX": 7,
         "caretY": 14,
         "filename": "C:/Users/35491/Documents/projects/DScode/ThQueue.h",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
+        "order": 9,
         "topLine": 1
     },
     {
-        "caretX": 7,
-        "caretY": 23,
+        "caretX": 24,
+        "caretY": 13,
         "filename": "C:/Users/35491/Documents/projects/DScode/ThreadNode.h",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
+        "order": 7,
         "topLine": 1
     },
     {
-        "caretX": 7,
-        "caretY": 7,
+        "caretX": 20,
+        "caretY": 8,
         "filename": "C:/Users/35491/Documents/projects/DScode/CSTNode.h",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
+        "order": 1,
         "topLine": 1
     },
     {
         "caretX": 9,
         "caretY": 19,
         "filename": "C:/Users/35491/Documents/projects/DScode/Node.cpp",
-        "focused": true,
-        "isOpen": true,
+        "focused": false,
+        "isOpen": false,
         "leftChar": 1,
-        "order": 0,
         "topLine": 64
     },
     {
@@ -146,11 +150,22 @@
     },
     {
         "caretX": 19,
-        "caretY": 11,
-        "filename": "C:/Users/35491/Documents/projects/DScode/main.h",
+        "caretY": 2,
+        "filename": "C:/Users/35491/Documents/projects/DScode/HashList.h",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
+        "order": 8,
+        "topLine": 1
+    },
+    {
+        "caretX": 19,
+        "caretY": 6,
+        "filename": "C:/Users/35491/Documents/projects/DScode/main.h",
+        "focused": true,
+        "isOpen": true,
+        "leftChar": 1,
+        "order": 5,
         "topLine": 1
     },
     {
@@ -172,13 +187,14 @@
         "topLine": 25
     },
     {
-        "caretX": 8,
-        "caretY": 6,
+        "caretX": 21,
+        "caretY": 9,
         "filename": "C:/Users/35491/Documents/projects/DScode/main.cpp",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
-        "topLine": 1
+        "order": 4,
+        "topLine": 3
     },
     {
         "caretX": 5,
@@ -208,13 +224,14 @@
         "topLine": 1
     },
     {
-        "caretX": 14,
-        "caretY": 88,
+        "caretX": 2,
+        "caretY": 131,
         "filename": "C:/Users/35491/Documents/projects/DScode/CSTNode.cpp",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
-        "topLine": 78
+        "order": 0,
+        "topLine": 118
     },
     {
         "caretX": 12,
@@ -226,12 +243,13 @@
         "topLine": 14
     },
     {
-        "caretX": 12,
-        "caretY": 14,
+        "caretX": 1,
+        "caretY": 40,
         "filename": "C:/Users/35491/Documents/projects/DScode/BiTree.h",
         "focused": false,
-        "isOpen": false,
+        "isOpen": true,
         "leftChar": 1,
-        "topLine": 1
+        "order": 2,
+        "topLine": 29
     }
 ]

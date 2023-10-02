@@ -14,7 +14,6 @@ void preOrderTravse(CSTree T){
 			preOrderTravse(pCurchild);
 			pCurchild=pCurchild->nextSibling;
 		}
-		preOrderTravse(T->nextSibling);
 	}
 }
 /*
@@ -50,7 +49,7 @@ void leafsInCSTree(CSTree T){
 }
 
 
-int getLeafs(CSTree T){
+int getLeafsNum(CSTree T){
 	if(T==NULL)return -1;
 	if(T->firstChild==NULL){//如果没有孩子，则找到了叶子节点
 		//TODO
@@ -60,7 +59,7 @@ int getLeafs(CSTree T){
 		int sum=0;
 		while(p!=NULL){//循环遍历T的每个子树中的叶子节点数
 			//TODO
-			sum+=getLeafs(p);//把每一棵子树内的叶子节点数加起来
+			sum+=getLeafsNum(p);//把每一棵子树内的叶子节点数加起来
 			p=p->nextSibling;
 		}
 		return sum;//返回自己的叶子节点数给上一层
@@ -77,6 +76,7 @@ int degree=0;
 void getDegreeInCSTree(CSTree T){
 	if(T!=NULL){
 		//TODO
+		//访问根节点的度
 		int count=0;
 		CSTNode* pCurNode=T;
 		while(pCurNode->nextSibling!=NULL){
@@ -88,6 +88,7 @@ void getDegreeInCSTree(CSTree T){
 			//TODO
 			degree=count;
 		}
+		//对孩子节点进行遍历		
 		CSTNode* pCurChildNode=T->firstChild;
 		while(pCurChildNode!=NULL){
 			//TODO
@@ -109,34 +110,18 @@ int getDepthOfCSTree(CSTree T){
 				maxSubTreeHeight=subTreeHeight;
 			}
 		}
-		return maxSubTreeHeight+1;
-	}
-}
-
-int func(CSTree T){
-	//TODO
-	if(T==NULL){
-		//TODO
-		return 0;
-	}else{
-		int maxSubHeight=0;
-		int curSubHeight=0;
-		for(CSTNode* p=T->firstChild;p!=NULL;p=p->nextSibling){
-			//TODO
-			curSubHeight=func(p);
-			if(curSubHeight>maxSubHeight){
-				//TODO
-				maxSubHeight=curSubHeight;
-			}
-		}
-		return maxSubHeight+1;
+		return maxSubTreeHeight+1;//后序遍历
 	}
 }
 void CSTNodeTest(){
 	//TODO
-	char PreArr[]="ABCDE";
-	char InArr[]="DCBEA";
-	CSTree T=createByLelIn(PreArr,InArr,0,sizeof(PreArr)/sizeof(*PreArr)-2,sizeof(InArr)/sizeof(*InArr)-1);
+//	char PreArr[]="ABCDE";
+//	char InArr[]="DCBEA";
+//	CSTree T=createByLelIn(PreArr,InArr,0,sizeof(PreArr)/sizeof(*PreArr)-2,sizeof(InArr)/sizeof(*InArr)-1);
+	CSTree T=generate();
 //	preOrderTravse(T);
+//	PreOrder(T);
+//	printf("\n");
+//	PreForestTranvese(T);
 	preOrderTravse(T);
 }

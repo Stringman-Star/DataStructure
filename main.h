@@ -10,6 +10,7 @@
 #include"AdjList.h"
 #include"MGragh.h"
 #include"CSTNode.h"
+#include"HashList.h"
 #include <iostream>
 using namespace std;
 #endif

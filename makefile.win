@@ -5,9 +5,9 @@ CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
 RES      = Project3_private.res
-OBJ      = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o CSTNode.o MGragh.o $(RES)
-LINKOBJ  = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o CSTNode.o MGragh.o Project3_private.res
-CLEANOBJ  =  ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o Sqlist.o BSNode.o CSTNode.o MGragh.o  Project3_private.res Project3.exe
+OBJ      = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o HashList.o Sqlist.o BSNode.o CSTNode.o MGragh.o $(RES)
+LINKOBJ  = ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o HashList.o Sqlist.o BSNode.o CSTNode.o MGragh.o Project3_private.res
+CLEANOBJ  =  ThQueue.o AdjList.o Stack.o ThreadNode.o BiQueue.o BiTree.o Node.o Queue.o main.o HashList.o Sqlist.o BSNode.o CSTNode.o MGragh.o  Project3_private.res Project3.exe
 LIBS     =  -fstack-protector-strong
 INCS     =  
 CXXINCS  =  
@@ -27,10 +27,10 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-ThQueue.o: ThQueue.cpp ThQueue.h ThreadNode.h
+ThQueue.o: ThQueue.cpp
 	$(CPP) -c ThQueue.cpp -o ThQueue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-AdjList.o: AdjList.cpp AdjList.h Queue.h MGragh.h
+AdjList.o: AdjList.cpp
 	$(CPP) -c AdjList.cpp -o AdjList.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 Stack.o: Stack.cpp Stack.h
@@ -51,8 +51,11 @@ Node.o: Node.cpp Node.h
 Queue.o: Queue.cpp Queue.h
 	$(CPP) -c Queue.cpp -o Queue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-main.o: main.cpp Stack.h BSNode.h AdjList.h Queue.h ThreadNode.h CSTNode.h Node.h main.h Sqlist.h MGragh.h BiTree.h
+main.o: main.cpp Stack.h BSNode.h AdjList.h Queue.h ThreadNode.h CSTNode.h Node.h HashList.h main.h Sqlist.h MGragh.h BiTree.h
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS) 
+
+HashList.o: HashList.cpp Node.h HashList.h
+	$(CPP) -c HashList.cpp -o HashList.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 Sqlist.o: Sqlist.cpp Sqlist.h
 	$(CPP) -c Sqlist.cpp -o Sqlist.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
