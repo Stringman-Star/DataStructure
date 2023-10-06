@@ -4,7 +4,6 @@
 #include"AdjList.h"
 #include"MGragh.h"
 
-bool visited[MaxVertexNum]={false};
 void visit(int v){
 	visited[v]=true;
 	printf("%d ",v);

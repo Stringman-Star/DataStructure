@@ -1,6 +1,7 @@
 #include <iostream>
 #include"main.h"
 #include<string.h>
+
 int main(int argc, char** argv) {
 //	SqlistTest();
 //	NodeTest();
@@ -9,6 +10,6 @@ int main(int argc, char** argv) {
 //	ThreadNodeTest();
 //	Queue.Test();
 //	CSTNodeTest();
-	HashListTest();
+//	HashListTest();
 }
 

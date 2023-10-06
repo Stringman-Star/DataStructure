@@ -23,7 +23,7 @@ void initialHash(){
 int Hash(int data){return data%p;}
 int linerDetect(int Hbase,int index){
 	if(index>=20||linerD[index]>=tlength)return error;
-	else return (Hbase+linerD[index])%tlength;
+	else return (Hbase+linerD[index])%tlength; 
 }
 int quardraDetect(int Hbase,int index){
 	if(index>20)return error;

@@ -27,10 +27,10 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-ThQueue.o: ThQueue.cpp
+ThQueue.o: ThQueue.cpp ThQueue.h ThreadNode.h
 	$(CPP) -c ThQueue.cpp -o ThQueue.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-AdjList.o: AdjList.cpp
+AdjList.o: AdjList.cpp AdjList.h Queue.h MGragh.h
 	$(CPP) -c AdjList.cpp -o AdjList.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 Stack.o: Stack.cpp Stack.h

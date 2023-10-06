@@ -27,6 +27,19 @@ void showMG(MGragh mg){
 		putchar('\n');
 	}
 }
+void DFS(VertexType vertex){
+	if(visited[vertex]==false){
+		//TODO
+	}
+};
+
+void DFSTranvers(MGragh mg){
+	for(int i=0;i<mg.vexNum;i++){
+		//TODO
+		
+		
+	}
+}
 
 void MGraghTest(){
 	//TODO
