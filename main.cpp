@@ -11,5 +11,6 @@ int main(int argc, char** argv) {
 //	Queue.Test();
 //	CSTNodeTest();
 //	HashListTest();
+	AdjListTest();
 }
 

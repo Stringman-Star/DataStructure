@@ -2,41 +2,123 @@
 #include <stdlib.h>
 #include"Queue.h"
 #include"AdjList.h"
-#include"MGragh.h"
+bool visited[MaxVertexNum]={false};
 
 void visit(int v){
 	visited[v]=true;
 	printf("%d ",v);
 }
 
-void CreateAdjList(int data[],int num,int arcs[][MaxVertexNum],AdjList &adj){
-	int flag;
-	ArcNode *arcnode,*last;
-	for(int i=0;i<num;i++){
+void headInsert(VNode* vnode,int dest,int weight){
+	ArcNode* p=(ArcNode*)malloc(sizeof(ArcNode));
+	p->adjVex=dest;
+	p->weight=weight;
+	p->next=vnode->fisrt;
+	vnode->fisrt=p;
+}
+
+void createAdjList(ALGragh &alg,char *file1,char* file2){
+	FILE *fp=fopen(file1,"r");
+	int source,dest,weight;//点和边坐标
+	if(!fp)return;
+	int num=0;
+	while(!feof(fp)){
 		//TODO
-		adj[i].data=data[i];
-		flag=0;
-		last=NULL;
-		for(int j=0;j<num;j++){
+		fscanf(fp,"%d",&alg.adjlist[num].data);//读取数据节点文件
+		num++;
+	}
+	alg.vexNum=num;
+	fclose(fp);
+	//读取边节点文件
+	fp=fopen(file2,"r");
+	if(!fp)return;
+	mapKind kind=alg.mk;
+	switch (kind) {//根据不同类型选择不同的创建方式
+	case DM:
+		//TODO
+		while(!feof(fp)){
 			//TODO
-			if(arcs[i][j]==0){
-				//TODO
-				continue;
-			}
-			arcnode=(ArcNode*)malloc(sizeof(ArcNode));
-			arcnode->adjVex=j;
-			arcnode->next=NULL;
-			if(!flag){
-				//TODO
-				flag=1;
-				adj[i].fisrt=arcnode;
-			}else{
-				last->next=arcnode;
-			}
-			last=arcnode;
+			fscanf(fp,"%d %d\n",&source,&dest);
+			headInsert(&alg.adjlist[source],dest,0);
+			alg.arcNum++;
 		}
+		fclose(fp);
+		break;
+	case UDM:
+		//TODO
+		while(!feof(fp)){
+			//TODO
+			fscanf(fp,"%d %d\n",&source,&dest);
+			headInsert(&alg.adjlist[source],dest,empty);
+			headInsert(&alg.adjlist[dest],source,empty);
+			alg.arcNum+=2;
+		}
+		fclose(fp);
+		break;
+	case DN:
+		//TODO
+		while(!feof(fp)){
+			//TODO
+			fscanf(fp,"%d %d %d\n",&source,&dest,&weight);
+			headInsert(&alg.adjlist[source],dest,weight);
+			alg.arcNum++;
+		}
+		fclose(fp);
+		break;
+	default:
+		//TODO
+		while(!feof(fp)){
+			//TODO
+			fscanf(fp,"%d %d %d\n",&source,&dest,&weight);
+			headInsert(&alg.adjlist[source],dest,weight);
+			headInsert(&alg.adjlist[dest],source,weight);
+			alg.arcNum+=2;
+		}
+		fclose(fp);
+		break;
 	}
 }
+
+void CreateALGragh(ALGragh &alg,char *file1,char* file2,mapKind kind){
+	alg.mk=kind;
+	alg.arcNum=0;
+	alg.vexNum=0;
+	for(int i=0;i<MaxVertexNum;i++){
+		//TODO
+		alg.adjlist[i].fisrt=NULL;
+	}
+	createAdjList(alg,file1,file2);
+	
+}
+
+//void CreateAdjList(int data[],int num,int arcs[][MaxVertexNum],AdjList &adj){
+//	int flag;
+//	ArcNode *arcnode,*last;
+//	for(int i=0;i<num;i++){
+//		//TODO
+//		adj[i].data=data[i];
+//		flag=0;
+//		last=NULL;
+//		for(int j=0;j<num;j++){
+//			//TODO
+//			if(arcs[i][j]==0){
+//				//TODO
+//				continue;
+//			}
+//			arcnode=(ArcNode*)malloc(sizeof(ArcNode));
+//			arcnode->adjVex=j;
+//			arcnode->next=NULL;
+//			if(!flag){
+//				//TODO
+//				flag=1;
+//				adj[i].fisrt=arcnode;
+//			}else{
+//				last->next=arcnode;
+//			}
+//			last=arcnode;
+//		}
+//	}
+//}
 
 /*
  *@param u vertex u
@@ -79,24 +161,21 @@ int NextAdjVex(AdjList adj,int u,int w){
 	}
 	return -1;
 }
-void showAdj(AdjList adj,int num){
-	for(int i=0;i<num;i++){
-		ArcNode* arcnode=adj[i].fisrt;
-		printf("data%d:     ",adj[i].data);
+void showALGragh(ALGragh alg){
+	printf("vexnum:%d\narcnum:%d\n",alg.vexNum,alg.arcNum);
+	for(int i=0;i<alg.vexNum;i++){
 		//TODO
-		for(int j=0;j<num;j++){
+		printf("%d->",alg.adjlist[i].data);
+		ArcNode* p=alg.adjlist[i].fisrt;
+		while(p!=NULL){
 			//TODO
-			if(arcnode!=NULL&&j==arcnode->adjVex){
+			printf("%d(%d)",p->adjVex,p->weight);
+			if(p->next!=NULL){
 				//TODO
-				putchar('1');
-				putchar(' ');
-				arcnode=arcnode->next;
-			}else{
-				putchar('0');
-				putchar(' ');
-			}
+				printf("->");
+			}else printf("\n");
+			p=p->next;
 		}
-		putchar('\n');
 	}
 }
 
@@ -345,22 +424,52 @@ bool isConnected(AdjList adj,int num){
 	return true;
 }
 
-int nums[20]={1,43,76,24,76,3,9,10,543,8
-	,4,34,23,0,65,34,77,98,34,29};
-const int num=20;//装载的节点数
-/*
- *@param arcs 一张图的所有边
- *@param vertexs 一张图的所有节点的值
- */
-int arcs[MaxVertexNum][MaxVertexNum]={
-{0,1,1,1,0},
-{1,0,1,1,1},
-{1,1,0,1,0},
-{1,1,1,0,1},
-{0,1,0,1,0}
-};
-int empty[MaxVertexNum][MaxVertexNum]={0};
-int vertexs[5]={0,1,2,3,4};
+void replace(char* p){
+	int index=0;
+	while(p[index]!='\0'){
+		//TODO
+		if(p[index]=='\\'){
+			//TODO
+			p[index]='/';
+		}
+		index++;
+	}
+}
+
+void professionalProcess(){
+	ALGragh alg;
+	char file1[100],file2[100];
+	mapKind kind;
+	printf("输入节点文件:\n");
+	scanf("%s",file1);
+	replace(file1);
+	printf("输入边节点文件:\n");
+	scanf("%s",file2);
+	replace(file2);
+	printf("选择图类型:\nA.DM	B.UDM	C.DN	D.UDN\n");
+	getchar();
+	char in;
+	scanf("%c",&in);
+	switch (in) {
+	case 'A':
+		//TODO
+		kind=DM;
+		break;
+	case 'B':
+		//TODO
+		kind=UDM;
+		break;
+	case 'C':
+		kind=DN;
+		break;
+	default:
+		//TODO
+		kind=UDN;
+		break;
+	}
+	CreateALGragh(alg,file1,file2,kind);
+	showALGragh(alg);
+}
 void AdjListTest(){
 	//TODO
 }

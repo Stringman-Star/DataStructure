@@ -2,8 +2,7 @@
 #define MGRAGH_H
 #define MaxVertexNum 100
 #define vexValue int
-
-bool visited[MaxVertexNum]={false};
+#include "AdjList.h"
 typedef struct MGragh{
 	int vexList[MaxVertexNum];//the value of vertex
 	int arcMatrix[MaxVertexNum][MaxVertexNum];//the value of arcs
@@ -11,7 +10,7 @@ typedef struct MGragh{
 	int arcNum;
 }MGragh;
 
-typedef enum mapKind{DM,UDM,DN,UDN}mapKind;
+//extern typedef enum mapKind{DM,UDM,DN,UDN}mapKind;
 /*
   DM Directed Map
   UDM UnDirected Map
@@ -34,7 +33,7 @@ typedef struct Gragh{
 	ArcMatrix arcmatrix;
 	int vexsNum;
 	int arcsNum;
-	mapKind kind;
+//	mapKind kind;
 }Gragh;
 
 void CreateMGragh(int data[],int num,int arcs[][MaxVertexNum],MGragh &mg);

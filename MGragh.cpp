@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include"MGragh.h"
+#include"AdjList.h"
+
+bool accessed[MaxVertexNum]={false};
 
 void CreateMGragh(int data[],int num,int arcs[][MaxVertexNum],MGragh &mg){
 	mg.vexNum=num;
@@ -27,17 +30,28 @@ void showMG(MGragh mg){
 		putchar('\n');
 	}
 }
-void DFS(VertexType vertex){
-	if(visited[vertex]==false){
+void DFS(int vertex,MGragh& mg){
+	if(accessed[vertex]==false){
 		//TODO
+		accessed[vertex]=true;
+		printf("%d ",vertex);
+		for(int i=0;i<mg.vexNum;i++){
+			//TODO
+			if(mg.arcMatrix[vertex][i]==1){
+				//TODO
+				DFS(i,mg);
+			}
+		}
 	}
 };
 
 void DFSTranvers(MGragh mg){
 	for(int i=0;i<mg.vexNum;i++){
 		//TODO
-		
-		
+		if(accessed[mg.vexList[i]]==true){
+			//TODO
+			DFS(mg.vexList[i],mg);
+		}
 	}
 }
 
